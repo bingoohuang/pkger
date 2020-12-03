@@ -1,6 +1,7 @@
 package pkger
 
 import (
+	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -67,6 +68,24 @@ func MkdirAll(p string, perm os.FileMode) error {
 // Open opens the named file for reading. If successful, methods on the returned file can be used for reading; the associated file descriptor has mode O_RDONLY.
 func Open(p string) (pkging.File, error) {
 	return impl().Open(p)
+}
+
+// ReadStr read string from named file.
+func ReadStr(p string) (string, error) {
+	r, err := Read(p)
+	return string(r), err
+}
+
+// Read read bytes slice from named file.
+func Read(p string) ([]byte, error) {
+	f, err := Open(p)
+	if err != nil {
+		return nil, err
+	}
+
+	defer f.Close()
+
+	return ioutil.ReadAll(f)
 }
 
 // Stat returns a FileInfo describing the named file.
