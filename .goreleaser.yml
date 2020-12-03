@@ -4,7 +4,7 @@ builds:
     env:
       - CGO_ENABLED=0
     ldflags:
-      - -s -w -X "github.com/markbates/pkger.Version={{.Tag}}"
+      - -s -w -X "github.com/bingoohuang/pkger.Version={{.Tag}}"
     goos:
       - darwin
       - linux
