@@ -3,7 +3,7 @@ package parser
 import (
 	"encoding/json"
 
-	"github.com/markbates/pkger/here"
+	"github.com/bingoohuang/pkger/here"
 )
 
 type File struct {

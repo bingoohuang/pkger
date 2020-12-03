@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/markbates/pkger"
+	"github.com/bingoohuang/pkger"
 )
 
 func main() {

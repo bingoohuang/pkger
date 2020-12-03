@@ -1,7 +1,7 @@
 package pkger
 
 import (
-	"github.com/markbates/pkger/pkging"
+	"github.com/bingoohuang/pkger/pkging"
 )
 
 // Apply will wrap the current implementation

@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/markbates/pkger/cmd/pkger/cmds"
+	"github.com/bingoohuang/pkger/cmd/pkger/cmds"
 )
 
 func main() {

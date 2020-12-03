@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/markbates/pkger/here"
+	"github.com/bingoohuang/pkger/here"
 )
 
 var _ Decl = IncludeDecl{}

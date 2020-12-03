@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/markbates/pkger/here"
-	"github.com/markbates/pkger/pkging"
+	"github.com/bingoohuang/pkger/here"
+	"github.com/bingoohuang/pkger/pkging"
 )
 
 func LoadFile(name string, ref *Ref, pkg pkging.Pkger) (os.FileInfo, error) {
@@ -61,7 +61,7 @@ func LoadFile(name string, ref *Ref, pkg pkging.Pkger) (os.FileInfo, error) {
 func LoadFiles(name string, ref *Ref, pkg pkging.Pkger) ([]os.FileInfo, error) {
 	var infos []os.FileInfo
 
-	her, err := here.Package("github.com/markbates/pkger")
+	her, err := here.Package("github.com/bingoohuang/pkger")
 	if err != nil {
 		return nil, err
 	}

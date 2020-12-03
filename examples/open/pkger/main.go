@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/markbates/pkger"
+	"github.com/bingoohuang/pkger"
 )
 
 func main() {

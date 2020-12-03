@@ -8,8 +8,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/markbates/pkger/here"
-	"github.com/markbates/pkger/pkging"
+	"github.com/bingoohuang/pkger/here"
+	"github.com/bingoohuang/pkger/pkging"
 )
 
 // Files wraps sync.Map and uses the following types:

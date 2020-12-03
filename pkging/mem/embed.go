@@ -3,10 +3,10 @@ package mem
 import (
 	"encoding/json"
 
-	"github.com/markbates/pkger/here"
-	"github.com/markbates/pkger/internal/maps"
-	"github.com/markbates/pkger/pkging"
-	"github.com/markbates/pkger/pkging/embed"
+	"github.com/bingoohuang/pkger/here"
+	"github.com/bingoohuang/pkger/internal/maps"
+	"github.com/bingoohuang/pkger/pkging"
+	"github.com/bingoohuang/pkger/pkging/embed"
 )
 
 // MarshalJSON creates a fully re-hydratable JSON representation of *Pkger

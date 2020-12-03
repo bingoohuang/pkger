@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/markbates/pkger/here"
-	"github.com/markbates/pkger/pkging"
+	"github.com/bingoohuang/pkger/here"
+	"github.com/bingoohuang/pkger/pkging"
 )
 
 const timeFmt = time.RFC3339Nano

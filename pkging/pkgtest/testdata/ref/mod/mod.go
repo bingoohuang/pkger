@@ -3,7 +3,7 @@ package mod
 import (
 	"io/ioutil"
 
-	"github.com/markbates/pkger"
+	"github.com/bingoohuang/pkger"
 )
 
 func Mod() (string, error) {
