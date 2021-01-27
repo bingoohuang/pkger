@@ -76,6 +76,20 @@ func ReadStr(p string) (string, error) {
 	return string(r), err
 }
 
+// MustReadStr read string from named file.
+func MustReadStr(p string) string {
+	return string(MustRead(p))
+}
+
+// MustRead read bytes slice from named file.
+func MustRead(p string) []byte {
+	if d, err := Read(p); err != nil {
+		panic(err)
+	} else {
+		return d
+	}
+}
+
 // Read read bytes slice from named file.
 func Read(p string) ([]byte, error) {
 	f, err := Open(p)

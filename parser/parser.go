@@ -151,6 +151,10 @@ func (p *Parser) Decls() (Decls, error) {
 		"Open",
 		"Dir",
 		"Walk",
+		"Read",
+		"ReadStr",
+		"MustRead",
+		"MustReadStr",
 	}
 
 	for _, n := range orderedNames {
