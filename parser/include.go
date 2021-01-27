@@ -16,19 +16,19 @@ type IncludeDecl struct {
 	file  *File
 	pos   token.Position
 	value string
+	typ   string
 }
 
-func NewInclude(her here.Info, inc string) (IncludeDecl, error) {
-	var id IncludeDecl
+func NewInclude(her here.Info, inc string) ([]IncludeDecl, error) {
 	pt, err := her.Parse(inc)
 	if err != nil {
-		return id, err
+		return nil, err
 	}
 
 	if pt.Pkg != her.ImportPath {
 		her, err = here.Package(pt.Pkg)
 		if err != nil {
-			return id, err
+			return nil, err
 		}
 	}
 
@@ -40,19 +40,22 @@ func NewInclude(her here.Info, inc string) (IncludeDecl, error) {
 		Here: her,
 	}
 
-	return IncludeDecl{
-		value: inc,
-		file:  f,
+	return []IncludeDecl{
+		{value: inc, file: f, typ: "pkger.Include"},
+		{value: inc, file: f, typ: "pkger.Read"},
+		{value: inc, file: f, typ: "pkger.ReadStr"},
+		{value: inc, file: f, typ: "pkger.MustRead"},
+		{value: inc, file: f, typ: "pkger.MustReadStr"},
 	}, nil
 }
 
 func (d IncludeDecl) String() string {
-	return fmt.Sprintf("pkger.Include(%q)", d.value)
+	return fmt.Sprintf("%s(%q)", d.typ, d.value)
 }
 
 func (d IncludeDecl) MarshalJSON() ([]byte, error) {
 	return json.Marshal(map[string]interface{}{
-		"type":  "pkger.Include",
+		"type":  d.typ,
 		"file":  d.file,
 		"pos":   d.pos,
 		"value": d.value,

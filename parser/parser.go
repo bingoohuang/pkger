@@ -233,12 +233,15 @@ func (p *Parser) parse() error {
 
 func (p *Parser) parseIncludes() error {
 	for _, i := range p.includes {
-		d, err := NewInclude(p.Info, i)
+		ds, err := NewInclude(p.Info, i)
 		if err != nil {
 			return err
 		}
 
-		p.decls["Include"] = append(p.decls["Include"], d)
+		for _, d := range ds {
+			k := strings.TrimPrefix(d.typ, "pkger.")
+			p.decls[k] = append(p.decls[k], d)
+		}
 	}
 	return nil
 }

@@ -273,6 +273,10 @@ The following declarations in your source code will tell the parser to embed fil
 * `pkger.Stat("<path>")` - Embeds the file, or folder, of the specified path.
 * `pkger.Walk("<path>", filepath.WalkFunc)` - Embeds all files under the specified path.
 * `pkger.Include("<path>")` - `Include` is a no-op that directs the pkger tool to include the desired file or folder.
+* `pkger.Read("<path>")` - `Read`  directs the pkger tool to read the desired filethat as []byte.
+* `pkger.ReadStr("<path>")` - `ReadStr`  directs the pkger tool to read the desired filethat as string.
+* `pkger.MustRead("<path>")` - `MustRead`  directs the pkger tool to read the desired filethat.
+* `pkger.MustReadStr("<path>")` - `MustReadStr`  directs the pkger tool to read the desired filethat.
 
 ### CLI Usage
 

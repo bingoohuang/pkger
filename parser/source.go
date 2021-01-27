@@ -111,12 +111,13 @@ func (p *ParsedSource) parse() error {
 					value: value,
 				}
 			}
-		case "Include":
+		case "Include", "Read", "ReadStr", "MustRead", "MustReadStr":
 			fn = func(f File, pos token.Position, value string) Decl {
 				return IncludeDecl{
 					file:  &f,
 					pos:   pos,
 					value: value,
+					typ:   "pkger." + name,
 				}
 			}
 		case "Stat":
